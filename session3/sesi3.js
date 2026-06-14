@@ -1,1 +1,0 @@
-let tugas = "basic programming";
