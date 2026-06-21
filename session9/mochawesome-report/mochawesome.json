@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-21T16:58:46.437Z",
+    "end": "2026-06-21T16:58:52.689Z",
+    "duration": 6252,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ef6f6050-11de-4388-ba98-09605ec77c07",
+      "title": "",
+      "fullFile": "D:\\KAHF\\BOOTCAMP QA\\session9\\tests\\sauce-test.js",
+      "file": "\\tests\\sauce-test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea573485-b9f4-4057-9763-68363e451470",
+          "title": "SauceDemo Automation Task",
+          "fullFile": "D:\\KAHF\\BOOTCAMP QA\\session9\\tests\\sauce-test.js",
+          "file": "\\tests\\sauce-test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"SauceDemo Automation Task\"",
+              "fullTitle": "SauceDemo Automation Task \"before all\" hook in \"SauceDemo Automation Task\"",
+              "timedOut": false,
+              "duration": 3311,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = await new Builder().forBrowser('firefox').build();\nawait driver.manage().window().maximize();",
+              "err": {},
+              "uuid": "2be04ec1-c98d-4715-82d6-411f5d429b49",
+              "parentUUID": "ea573485-b9f4-4057-9763-68363e451470",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"SauceDemo Automation Task\"",
+              "fullTitle": "SauceDemo Automation Task \"after all\" hook in \"SauceDemo Automation Task\"",
+              "timedOut": false,
+              "duration": 612,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (driver) {\n    await driver.quit();\n}",
+              "err": {},
+              "uuid": "43fa4d81-95a1-4edf-badf-f824466a1b5b",
+              "parentUUID": "ea573485-b9f4-4057-9763-68363e451470",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Sukses Login ke SauceDemo",
+              "fullTitle": "SauceDemo Automation Task Sukses Login ke SauceDemo",
+              "timedOut": false,
+              "duration": 1894,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginSuccessfully();\nlet title = await driver.getTitle();\nassert.strictEqual(title, 'Swag Labs');\nlet productsTitle = await driver.findElement(By.className('title'));\nlet isTitleDisplayed = await productsTitle.isDisplayed();\nassert.strictEqual(isTitleDisplayed, true);\nlet inventoryContainer = await driver.findElement(By.id('inventory_container'));\nlet isInventoryDisplayed = await inventoryContainer.isDisplayed();\nassert.strictEqual(isInventoryDisplayed, true);",
+              "err": {},
+              "uuid": "75542b78-93dc-4745-a310-1de985354b52",
+              "parentUUID": "ea573485-b9f4-4057-9763-68363e451470",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Urutkan Produk dari A-Z",
+              "fullTitle": "SauceDemo Automation Task Urutkan Produk dari A-Z",
+              "timedOut": false,
+              "duration": 427,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginSuccessfully();\nlet sortDropdown = await driver.findElement(By.className('product_sort_container'));\nawait sortDropdown.click();\nlet optionAZ = await driver.findElement(By.css('option[value=\"az\"]'));\nawait optionAZ.click();\nawait driver.wait(until.elementLocated(By.className('inventory_item_name')), 10000);\nlet firstProduct = await driver.findElement(By.className('inventory_item_name'));\nlet isFirstProductDisplayed = await firstProduct.isDisplayed();\nassert.strictEqual(isFirstProductDisplayed, true);\nlet productName = await firstProduct.getText();\nassert.strictEqual(productName, 'Sauce Labs Backpack');",
+              "err": {},
+              "uuid": "836dc30f-5e80-41fd-b53d-44135757681e",
+              "parentUUID": "ea573485-b9f4-4057-9763-68363e451470",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "75542b78-93dc-4745-a310-1de985354b52",
+            "836dc30f-5e80-41fd-b53d-44135757681e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2321,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 60000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 60000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.6"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
